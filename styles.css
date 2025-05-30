@@ -1,0 +1,804 @@
+/* Base Styles and Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Colors */
+:root {
+    --light-yellow: #afcb7c;
+    --dark-green: #3e5923;
+    --light-green: #a4be7b;
+    --medium-green: #5f8d4e;
+    --dark-text: #333;
+    --light-text: #ffffff;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 88vh;
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide:first-child {
+    opacity: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 1rem;
+    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
+
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
+
+}
+
+.hero-content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
+
+}
+
+.hero-controls {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    position: absolute;
+    top: -50px;
+}
+
+.arrow-left, .arrow-right {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+.dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: -300px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--light-text);
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+.cta-container {
+    margin-top: 10rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--dark-green);
+    color: var(--light-text);
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid var(--dark-green);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--light-text);
+}
+/* Deer Section */
+.deer-section {
+    background-color: transparent;
+}
+
+.category-grid {
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.category-item {
+    background-color: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.category-item h3, .category-item p {
+    padding: 0.5rem 1rem;
+}
+
+.category-item h3 {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+}
+
+/* Responsive for iPad Pro and up */
+@media screen and (min-width: 1024px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr); /* Fix columns to 3 on iPad Pro */
+        gap: 2.5rem;
+        padding: 3rem 2rem;
+    }
+
+    .category-item img {
+        height: 280px; /* reduce height to fit better */
+    }
+
+    .category-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .category-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Garden Showcase */
+.garden-showcase {
+    display: flex;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.garden-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    flex: 3;
+}
+
+.garden-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.garden-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.garden-content h3 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+}
+
+.garden-content img {
+    flex: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--light-green);
+    color: var(--dark-text);
+    margin-top: 3rem;
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--dark-green);
+    margin: 0 2rem;
+}
+
+.address, .contact-info, .social-media {
+    flex: 1;
+}
+
+.address h3, .contact-info h3, .social-media h3 {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+.social-icons a {
+    color: var(--dark-green);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .garden-showcase {
+        flex-direction: column;
+    }
+
+    .garden-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .garden-images {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .arrows {
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* ผลิตภัณฑ์จากฟาร์ม */
+.product-section {
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #065f46;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #047857;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 20rem; /* ปรับความสูงของรูปภาพที่นี่ */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #065f46;
+}
+
+.card-content p {
+    color: #047857;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-container button {
+    background-color: #047857;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Durian */
+.fruit-section {
+    
+    background-color: #ffffff; 
+    padding: 1rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    text-align: center;
+    max-width: 100%;
+    width: 300px; /* หรือกำหนดตามต้องการ เช่น 350px */
+    height: 400px;
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+}
+
+.card h2 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.card p {
+    font-size: 1.125rem;
+}
+
+/* สวนผัก */
+.garden-section {
+    background-color: #ffffff; 
+    padding: 1rem;
+}
+
+.section-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.image-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr; /* default on mobile */
+}
+
+@media (min-width: 640px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr); /* desktops */
+    }
+}
+
+.image-grid img,
+.text-column img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover,
+.text-column img:hover {
+    transform: scale(1.03);
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-column img {
+    margin-top: 1rem;
+}
+
+.description {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+
+/* ปลา */
+.fish-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.fish-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .fish-container {
+        flex-direction: row;
+    }
+}
+
+.fish-card {
+    background-color: #d3e0b7;
+    padding: 1rem;
+    text-align: center;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fish-card img {
+    width: 100%;
+    height: 400px; /* หรือปรับตามที่ต้องการ */
+    object-fit: cover;
+    border-radius: 8px; /* ใส่มุมมนเล็กน้อย (เลือกได้) */
+    
+}
+
+.card-text {
+    margin-top: 1rem;
+}
+
+.card-text h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text p {
+    font-size: 1.125rem;
+}
+
+/* หน้าสุดท้าย */
+.section-atmosphere {
+    background-color: #a4be7b; /* bg-yellow-100 */
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.card1 {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+}
+
+.card img {
+    width: 100%;
+    height:300px; /* หรือปรับตามที่ต้องการ */
+    object-fit: cover;
+    border-radius: 8px; /* ใส่มุมมนเล็กน้อย (เลือกได้) */
+    
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+
+
+.footer {
+    background-color: #3e5923;
+    color: white;
+    padding: 2.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ffffff44;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 1280px) {
+    .footer-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .footer-title {
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #ffffff66;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-list {
+    font-size: 0.875rem;
+    font-weight: 300;
+    list-style: disc;
+    padding-left: 1.25rem;
+    line-height: 1.75;
+  }
+  
+  .footer-social-list li {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #1e3a8a;
+    border-radius: 0.375rem;
+    width: 24px;
+    height: 20px;
+    font-size: 0.75rem;
+  }
+  .footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+  
+  .footer-brand {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  @media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+}
+  
+  /* เพิ่ม Shadow และ Scale เวลา Hover */
+  .card, .product-card, .category-item, .fish-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .card1:hover, .product-card:hover, .category-item:hover, .fish-card:hover {
+    transform: scale(1.03);
+}

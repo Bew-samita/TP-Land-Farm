@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(b001.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.M1 {
+    width: 420px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    color: #000000;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.M1 h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.M1 .i1 {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.i1 input {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px 45px 20px 20px;
+}
+
+.i1 input::placeholder {
+    color: rgb(0, 0, 0);
+
+}
+
+.i1 i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #fcfcfc;
+
+}
+
+.M1 .r1 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin: -15px 3px 15px;
+
+}
+
+.r1 label input {
+    accent-color: rgb(0, 0, 0);
+    margin-right: 3px;
+
+}
+
+.r1 a {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.r1 a :hover {
+    text-decoration: underline;
+
+}
+
+.M1 .bt1 {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(26, 255, 0, 0.255);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 3px rgb(0, 183, 255);
+    cursor: pointer;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.M1 .n1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.n1 p a {
+    color: #00ff15;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.n1 p a :hover {
+    text-decoration: underline;
+}
+#cb:checked~.i1 #E {
+    display: none;
+}
+
+.i1 #Es {
+    display: none;
+}
+
+#cb:checked~.i1 #Es {
+    display: block;
+}
